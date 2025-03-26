@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- strings.xml -->
+<resources>
+    <string name="app_name">SkyPass</string>
+
+    <!-- Common -->
+    <string name="back">Back</string>
+    <string name="retry">Retry</string>
+    <string name="error">Error</string>
+
+    <!-- Home Screen -->
+    <string name="welcome_title">Welcome to SkyPass</string>
+    <string name="weather_title">Weather</string>
+    <string name="weather_description">Check current weather and forecast</string>
+    <string name="compass_title">Compass</string>
+    <string name="compass_description">Digital compass to find your direction</string>
+
+    <!-- Weather Screen -->
+    <string name="feels_like">Feels like</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind">Wind</string>
+    <string name="forecast_title">3-Day Forecast</string>
+    <string name="location_permission_title">Location Permission Required</string>
+    <string name="location_permission_message">We need access to your location to show you the weather in your area.</string>
+    <string name="grant_permission">Grant Permission</string>
+
+    <!-- Compass Screen -->
+    <string name="compass_calibrate">Calibrate</string>
+    <string name="compass_accuracy">Accuracy: </string>
+    <string name="compass_not_available">Compass Sensors Not Available</string>
+    <string name="compass_not_available_message">Your device doesn\'t have the required sensors for compass functionality.</string>
+    <string name="accuracy_high">High</string>
+    <string name="accuracy_medium">Medium</string>
+    <string name="accuracy_low">Low</string>
+    <string name="accuracy_unreliable">Unreliable</string>
+</resources>
