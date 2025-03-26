@@ -43,7 +43,7 @@ SkyPass adalah aplikasi Android yang menyediakan informasi cuaca dan kompas digi
 
 1. Clone repository
 ```
-git clone [https://github.com/V7-Lippyy/Skypass-App]
+git clone [https://github.com/V7-Lippyy/Skypass-App.git]
 ```
 
 2. Buka project di Android Studio
