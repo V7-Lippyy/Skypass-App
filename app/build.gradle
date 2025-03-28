@@ -95,6 +95,11 @@ dependencies {
     implementation "com.squareup.moshi:moshi-kotlin:${rootProject.ext.moshi_version}"
     ksp "com.squareup.moshi:moshi-kotlin-codegen:${rootProject.ext.moshi_version}"
 
+    // Room Database
+    implementation "androidx.room:room-runtime:${rootProject.ext.room_version}"
+    implementation "androidx.room:room-ktx:${rootProject.ext.room_version}"
+    ksp "androidx.room:room-compiler:${rootProject.ext.room_version}"
+
     // DataStore Preferences
     implementation "androidx.datastore:datastore-preferences:1.0.0"
 

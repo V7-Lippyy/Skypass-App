@@ -6,9 +6,12 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Cloud
+import androidx.compose.material.icons.filled.EditNote
 import androidx.compose.material.icons.filled.Explore
 import androidx.compose.material.icons.rounded.Cloud
+import androidx.compose.material.icons.rounded.EditNote
 import androidx.compose.material.icons.rounded.Explore
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -23,13 +26,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.material.icons.filled.ArrowForward
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     onNavigateToWeather: () -> Unit,
-    onNavigateToCompass: () -> Unit
+    onNavigateToCompass: () -> Unit,
+    onNavigateToTravel: () -> Unit
 ) {
     // Gradient background
     val backgroundGradient = Brush.verticalGradient(
@@ -97,7 +100,7 @@ fun HomeScreen(
                 )
 
                 Text(
-                    text = "Weather and Compass in One App",
+                    text = "Weather, Compass, and Travel Journal in One App",
                     style = MaterialTheme.typography.bodyLarge,
                     color = Color.White.copy(alpha = 0.7f),
                     textAlign = TextAlign.Center,
@@ -129,6 +132,22 @@ fun HomeScreen(
                         colors = listOf(
                             Color(0xFFE17763),
                             Color(0xFFE14B2C)
+                        )
+                    )
+                )
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                // New Travel Journal feature card
+                ModernFeatureCard(
+                    title = "Travel Journal",
+                    description = "Record and track your journeys",
+                    icon = Icons.Rounded.EditNote,
+                    onClick = onNavigateToTravel,
+                    gradient = Brush.horizontalGradient(
+                        colors = listOf(
+                            Color(0xFF43A047),
+                            Color(0xFF2E7D32)
                         )
                     )
                 )
@@ -219,7 +238,7 @@ fun ModernFeatureCard(
 
                 // Arrow icon
                 Icon(
-                    imageVector = Icons.Filled.ArrowForward,  // atau Icons.Rounded.ArrowForward
+                    imageVector = Icons.Filled.ArrowForward,
                     contentDescription = "Navigate to $title",
                     tint = Color.White,
                     modifier = Modifier.padding(8.dp)

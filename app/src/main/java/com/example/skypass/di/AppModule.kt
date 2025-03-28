@@ -2,7 +2,12 @@
 package com.example.skypass.di
 
 import android.content.Context
+import com.example.skypass.data.local.AppDatabase
+import com.example.skypass.data.local.dao.TravelCategoryDao
+import com.example.skypass.data.local.dao.TravelEntryDao
+import com.example.skypass.data.local.dao.TravelTagDao
 import com.example.skypass.data.remote.WeatherApiService
+import com.example.skypass.data.repository.TravelEntryRepository
 import com.example.skypass.util.Constants
 import com.example.skypass.util.NetworkMonitor
 import dagger.Module
@@ -48,5 +53,40 @@ object AppModule {
     @Singleton
     fun provideNetworkMonitor(@ApplicationContext context: Context): NetworkMonitor {
         return NetworkMonitor(context)
+    }
+
+    // Room Database related providers
+    @Provides
+    @Singleton
+    fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {
+        return AppDatabase.getDatabase(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideTravelEntryDao(database: AppDatabase): TravelEntryDao {
+        return database.travelEntryDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideTravelTagDao(database: AppDatabase): TravelTagDao {
+        return database.travelTagDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideTravelCategoryDao(database: AppDatabase): TravelCategoryDao {
+        return database.travelCategoryDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideTravelEntryRepository(
+        travelEntryDao: TravelEntryDao,
+        travelTagDao: TravelTagDao,
+        travelCategoryDao: TravelCategoryDao
+    ): TravelEntryRepository {
+        return TravelEntryRepository(travelEntryDao, travelTagDao, travelCategoryDao)
     }
 }
