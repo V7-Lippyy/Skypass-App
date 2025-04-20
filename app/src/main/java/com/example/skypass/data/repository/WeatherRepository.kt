@@ -47,4 +47,4 @@ class WeatherRepository @Inject constructor(
         val query = "$lat,$lon"
         return getForecast(query, days)
     }
-}
+} S
